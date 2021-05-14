@@ -1,0 +1,61 @@
+{% extends "base.html" %} 
+{% load static %}
+<link href="{% static '/management/static/management/css/home.css' %}">
+{% block title %}
+
+Home
+  
+{% endblock title %}
+
+{% block content %}  
+
+<div class="container">
+    <div class="m-4 p-4">
+<div class="card">
+    <div class="card-header">
+        <b>Welcome to APNA BANK</b>
+    </div>
+    <div class="row">
+        <div class="col-sm-4 m-2">
+            <img src="{% static 'management/images/bank.png' %}" width="100" height="100" class="img-thumbnail" alt="...">
+
+        </div>
+        <div class="col-sm-6 m-2">
+            <marquee direction="right">...APNA BANK...</marquee>
+        </div>
+    </div>
+    <div class="card-body">
+        {% if error %}
+        <div class="alert alert-warning d-flex align-items-center" role="alert">
+            <svg class="bi flex-shrink-0 me-2" width="24" height="24"><use xlink:href="#exclamation-triangle-fill"/></svg>
+            <div>
+              {{error}}
+            </div>
+          </div>
+            {% endif %}
+      <h5 class="card-title">Welcome to APNA BANK</h5>
+      <p class="card-text">We are Here to help you please click on view customer.</p>
+      <div class="row">
+          <div class="col-sm-4">
+            <a class="btn btn-sm btn-success" href="/viewcustomer" role="button">VIEW CUSTOMER</a>
+
+          </div>
+          <div class="col-sm-4">
+            <a class="btn btn-sm btn-danger" href="/transection_history" role="button">TXN HISTORY</a>
+
+          </div>
+          <div class="col-sm-4">
+            <a class="btn btn-sm btn-danger" href="#" role="button">Account Details</a>
+
+          </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</div>
+
+{% endblock content %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'management/css/home.css' %}">
+{% endblock css %}
